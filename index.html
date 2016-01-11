@@ -20,7 +20,17 @@
 {# Customize content. Modify right side of equals sign to match tab names in spreadsheet #}
 {% block content %}
   <div class="container">
-    <h1>This is the homepage</h1>
+    <div class="intro-bonnie">
+      <div class="row">
+        <div class="col-sm-4">
+          <img src="img/bonnie.jpg" class="img-responsive">
+          <p class="credit">Photo: John Dziekan/Chicago Tribune/MCT</p>
+        </div> 
+        <div class="col-sm-8">
+          {{ intro|markdown }}
+        </div>
+      </div>
+    </div>
   </div>
 {% endblock %}
 

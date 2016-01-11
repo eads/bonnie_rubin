@@ -20,7 +20,22 @@
 {# Customize content. Modify right side of equals sign to match tab names in spreadsheet #}
 {% block content %}
   <div class="container">
-    <h1>This is the articles page</h1>
+    <h1>Portfolio</h1>
+    <p>As a Chicago Tribune reporter for 25 years, Bonnie M. Rubin specialized in health and family issues, covering stories on marginalized populations, from premature babies to at-risk teens to wounded veterans. Improving quality and access to mental health care has been an area of particular interest, with more than two dozen bylines on this topic alone. Here is a sample of Bonnie M. Rubin's work.</p>
+    {% for article in front_page %}
+      <div class="row article">
+        <div class="col-sm-9">
+          <h3>{{ article.headline }}</h3>
+          <h4>{{ article.publication_date|format_date }}</h4>
+          <p>{{ article.first_paragraph }}</p>
+          <p><a href="pdf/{{ article.pdf_file }}">Read the story in PDF</a></p>
+        </div>
+        <div class="col-sm-3">
+          <p><img src="img/{{ article.image_file}}" class="img-responsive"></p>
+        </div>
+      </div>
+
+    {% endfor %}
   </div>
 {% endblock %}
 
