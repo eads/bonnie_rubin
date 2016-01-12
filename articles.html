@@ -22,20 +22,49 @@
   <div class="container">
     <h1>Portfolio</h1>
     <p>As a Chicago Tribune reporter for 25 years, Bonnie M. Rubin specialized in health and family issues, covering stories on marginalized populations, from premature babies to at-risk teens to wounded veterans. Improving quality and access to mental health care has been an area of particular interest, with more than two dozen bylines on this topic alone. Here is a sample of Bonnie M. Rubin's work.</p>
-    {% for article in front_page %}
-      <div class="row article">
-        <div class="col-sm-9">
-          <h3>{{ article.headline }}</h3>
-          <h4>{{ article.publication_date|format_date }}</h4>
-          <p>{{ article.first_paragraph }}</p>
-          <p><a href="pdf/{{ article.pdf_file }}">Read the story in PDF</a></p>
+    <div class="portfolio-section">
+      <h3>The Front Page</h3>
+      {% for article in front_page %}
+        <div class="row article">
+          <div class="col-sm-9">
+            <p class="article-item">&#9679; <span class="headline">{{ article.headline }} </span> {{ article.publication_date|format_date }}</p>
+            <p>{{ article.first_paragraph }} <a href="pdf/{{ article.pdf_file }}">Read the full story in PDF <i class="fa fa-chevron-right"></i></a></p>
+          </div>
+          <div class="col-sm-3">
+            <p><img src="img/{{ article.image_file}}" class="img-responsive"></p>
+          </div>
         </div>
-        <div class="col-sm-3">
-          <p><img src="img/{{ article.image_file}}" class="img-responsive"></p>
+      {% endfor %}
+      {% for article in front_page2 %}
+        <div class="row article">
+          <p class="article-item">&#9679; <span class="headline">{{ article.headline }} </span> {{ article.publication_date|format_date }}. <a href="{{ article.html_file }}">Read the full story <i class="fa fa-chevron-right"></i></a></p>
         </div>
-      </div>
-
-    {% endfor %}
+      {% endfor %}
+    </div>
+    <div class="portfolio-section">
+      <h3>Mental Health</h3>
+      {% for article in mental_health %}
+        <div class="row article">
+          <p class="article-item">&#9679; <a href="{{ article.html_file }}"><span class="headline">{{ article.headline }} </span></a> {{ article.publication_date|format_date }}.</p>
+        </div>
+      {% endfor %}
+    </div> 
+    <div class="portfolio-section">
+      <h3>Adoption/Infertility</h3>
+      {% for article in adoption_infertility %}
+        <div class="row article">
+          <p class="article-item">&#9679; <a href="{{ article.html_file }}"><span class="headline">{{ article.headline }} </span></a> {{ article.publication_date|format_date }}.</p>
+        </div>
+      {% endfor %}
+    </div>
+    <div class="portfolio-section">
+      <h3>Essays</h3>
+      {% for article in essays %}
+        <div class="row article">
+          <p class="article-item">&#9679; <a href="{{ article.html_file }}"><span class="headline">{{ article.headline }} </span></a> {{ article.publication_date|format_date }}.</p>
+        </div>
+      {% endfor %}
+    </div>
   </div>
 {% endblock %}
 
