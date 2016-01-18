@@ -1,0 +1,30 @@
+{% extends '_base.html' %}
+
+{% block meta %}
+{% set header = header %}
+
+{% include '_meta.html' %}
+{% endblock %}
+
+{# Customize title here #}
+{% block title %}
+{% set header = header %}
+{% include '_title.html' %}
+{% endblock %}
+
+{# Customize intro here #}
+{% block intro %}
+{% endblock %}
+
+{% block content %}
+
+<div class="container">
+    <div class="article-header">
+        <h3>{{ headline }}</h3>
+        <h4>{{ first_paragraph }}</h4>
+        <h4>Date of publication: {{ publication_date|format_date }}</h4>
+    </div>
+
+  {{ content|safe }}
+</div>
+{% endblock content %}
