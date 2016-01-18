@@ -1,8 +1,11 @@
 # -*- coding: utf-8 -*-
-
 """
 Tarbell project configuration
 """
+import os
+from flask import Blueprint, g
+
+blueprint = Blueprint('bonnie_rubin', __name__)
 
 # Google spreadsheet key
 SPREADSHEET_KEY = "1XA27OLsCVTLtgkDe2O-l2vL0pXW25wkVwp3Bxr8Cxow"
@@ -42,3 +45,23 @@ DEFAULT_CONTEXT = {
     'name': 'bonnie_rubin',
     'title': 'Bonnie M. Rubin website'
 }
+
+
+
+@blueprint.route('/<article_html_file>')
+def article(article_html_file):
+    context = g.current_site.get_context()
+    extra_context = None
+    for sheet, content in context.items():
+        if isinstance(content, list) and content[0].get('html_file'):
+            for row in content:
+                if row.get('html_file') == article_html_file:
+                    extra_context = row
+                    with open(os.path.join('articles', article_html_file)) as f:
+                        extra_context['content'] = f.read()
+
+    if extra_context:
+        return g.current_site.preview('_article.html', extra_context)
+    else:
+        return 'No file found', 404
+
