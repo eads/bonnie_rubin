@@ -63,5 +63,5 @@ def article(article_html_file):
     if extra_context:
         return g.current_site.preview('_article.html', extra_context)
     else:
-        return 'No file found', 404
+        return g.current_site.preview(article_html_file)
 
