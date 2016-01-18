@@ -57,7 +57,7 @@ def article(article_html_file):
             for row in content:
                 if row.get('html_file') == article_html_file:
                     extra_context = row
-                    with open(os.path.join('articles', article_html_file)) as f:
+                    with open(os.path.join('_articles', article_html_file)) as f:
                         extra_context['content'] = f.read()
 
     if extra_context:
