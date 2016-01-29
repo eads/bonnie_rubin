@@ -22,7 +22,7 @@
     <div class="article-header">
         <h3>{{ headline }}</h3>
         <h4>{{ first_paragraph }}</h4>
-        <h4>Date of publication: {{ publication_date|format_date }}</h4>
+        <h4>{{ publication_date|format_date("%B %w, %Y") }}</h4>
     </div>
 
   {{ content|safe }}
