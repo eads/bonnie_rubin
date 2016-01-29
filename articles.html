@@ -26,18 +26,7 @@
       <h3>The Front Page</h3>
       {% for article in front_page %}
         <div class="row article">
-          <div class="col-sm-9">
-            <p class="article-item">&#9679; <span class="headline">{{ article.headline }} </span> {{ article.publication_date|format_date }}</p>
-            <p>{{ article.first_paragraph }} <a href="pdf/{{ article.pdf_file }}">Read the full story in PDF <i class="fa fa-chevron-right"></i></a></p>
-          </div>
-          <div class="col-sm-3">
-            <p><img src="img/{{ article.image_file}}" class="img-responsive"></p>
-          </div>
-        </div>
-      {% endfor %}
-      {% for article in front_page2 %}
-        <div class="row article">
-          <p class="article-item">&#9679; <span class="headline">{{ article.headline }} </span> {{ article.publication_date|format_date }}. <a href="{{ article.html_file }}">Read the full story <i class="fa fa-chevron-right"></i></a></p>
+          <p class="article-item">&#9679; <a href="{{ article.link}}" target="_blank"><span class="headline">{{ article.headline }} </span></a> {{ article.publication_date|format_date }}.</p>
         </div>
       {% endfor %}
     </div>
@@ -45,7 +34,7 @@
       <h3>Mental Health</h3>
       {% for article in mental_health %}
         <div class="row article">
-          <p class="article-item">&#9679; <a href="{{ article.html_file }}"><span class="headline">{{ article.headline }} </span></a> {{ article.publication_date|format_date }}.</p>
+          <p class="article-item">&#9679; <a href="{{ article.link }}" target="_blank"><span class="headline">{{ article.headline }} </span></a> {{ article.publication_date|format_date }}.</p>
         </div>
       {% endfor %}
     </div> 
@@ -53,7 +42,7 @@
       <h3>Adoption/Infertility</h3>
       {% for article in adoption_infertility %}
         <div class="row article">
-          <p class="article-item">&#9679; <a href="{{ article.html_file }}"><span class="headline">{{ article.headline }} </span></a> {{ article.publication_date|format_date }}.</p>
+          <p class="article-item">&#9679; <a href="{{ article.link }}" target="_blank"><span class="headline">{{ article.headline }} </span></a> {{ article.publication_date|format_date }}.</p>
         </div>
       {% endfor %}
     </div>
@@ -61,10 +50,11 @@
       <h3>Essays</h3>
       {% for article in essays %}
         <div class="row article">
-          <p class="article-item">&#9679; <a href="{{ article.html_file }}"><span class="headline">{{ article.headline }} </span></a> {{ article.publication_date|format_date }}.</p>
+          <p class="article-item">&#9679; <a href="{{ article.link }}" target="_blank"><span class="headline">{{ article.headline }} </span></a> {{ article.publication_date|format_date }}.</p>
         </div>
       {% endfor %}
     </div>
+    <p class="page-end">❧ ❧ ❧</p>
   </div>
 {% endblock %}
 
