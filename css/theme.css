@@ -42,7 +42,15 @@ body {
     margin-bottom: 0;
     border-bottom: 1px solid rgba(255,255,255,.3);
     font-family: 'Titillium Web', sans-serif; font-weight:200;
-    background-color: #4E3E5C;
+    /*background-color: #4E3E5C;*/
+    background: rgba(147,206,222,1);
+    background: -moz-linear-gradient(-45deg, rgba(147,206,222,1) 0%, rgba(116,184,212,1) 24%, rgba(72,154,197,1) 58%);
+    background: -webkit-gradient(left top, right bottom, color-stop(0%, rgba(147,206,222,1)), color-stop(24%, rgba(116,184,212,1)), color-stop(58%, rgba(72,154,197,1)));
+    background: -webkit-linear-gradient(-45deg, rgba(147,206,222,1) 0%, rgba(116,184,212,1) 24%, rgba(72,154,197,1) 58%);
+    background: -o-linear-gradient(-45deg, rgba(147,206,222,1) 0%, rgba(116,184,212,1) 24%, rgba(72,154,197,1) 58%);
+    background: -ms-linear-gradient(-45deg, rgba(147,206,222,1) 0%, rgba(116,184,212,1) 24%, rgba(72,154,197,1) 58%);
+    background: linear-gradient(135deg, rgba(147,206,222,1) 0%, rgba(116,184,212,1) 24%, rgba(72,154,197,1) 58%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#93cede', endColorstr='#489ac5', GradientType=1 );
     min-height: 70px;
 }
 
@@ -75,8 +83,15 @@ body {
 
 .navbar-custom .nav li a:hover {
     outline: 0;
-    color: rgba(255,255,255,.8);
+    color: rgba(255,255,255,1);
     background-color: transparent;
+    font-weight: bold;
+}
+
+.navbar-custom a:hover .journalist-name,
+.navbar-custom a:hover .journalist-description{
+    font-weight: bold;
+    color: #fff;
 }
 
 .navbar-custom .nav li a:focus,
@@ -124,7 +139,6 @@ body {
         padding: 20px 0;
         border-bottom: 0;
         letter-spacing: 1px;
-        background: 0 0;
         -webkit-transition: background .5s ease-in-out,padding .5s ease-in-out;
         -moz-transition: background .5s ease-in-out,padding .5s ease-in-out;
         transition: background .5s ease-in-out,padding .5s ease-in-out;
@@ -136,7 +150,7 @@ body {
     .navbar-custom.top-nav-collapse {
         padding: 0;
         border-bottom: 1px solid rgba(255,255,255,.3);
-        background: #5B556B;
+        /*background: #005A82;*/
     }
 }
 
@@ -493,4 +507,8 @@ body {
 .journalist-description {
     font-weight: 200;
     font-size: 14px;
+}
+
+.page-end {
+    text-align: center;
 }
