@@ -20,7 +20,12 @@
 {# Customize content. Modify right side of equals sign to match tab names in spreadsheet #}
 {% block content %}
   <div class="container">
-    <h1>This is the awards page</h1>
+    <h1>Awards</h1>
+    <p>Bonnie M. Rubin has authored several books, including “Quick Escapes from Chicago” (Globe-Pequot) and “Fifty on Fifty” (Warner Books), which looked at notable women’s lives at the half-century mark.</p>
+    {% for award in awards %}
+    <li><p>{{ award.year }} - {{ award.description }}</p></li>
+    {% endfor %}
+    <p class="page-end">❧ ❧ ❧</p>
   </div>
 {% endblock %}
 
