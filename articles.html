@@ -47,6 +47,14 @@
       {% endfor %}
     </div>
     <div class="portfolio-section">
+      <h3>Health and Wellness</h3>
+      {% for article in health_wellness %}
+        <div class="row article">
+          <p class="article-item">&#9679; <a href="{{ article.link }}" target="_blank"><span class="headline">{{ article.headline }} </span></a> {{ article.publication_date|format_date }}.</p>
+        </div>
+      {% endfor %}
+    </div>
+    <div class="portfolio-section">
       <h3>Essays</h3>
       {% for article in essays %}
         <div class="row article">
