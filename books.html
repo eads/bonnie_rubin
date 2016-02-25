@@ -21,7 +21,6 @@
 {% block content %}
   <div class="container">
     <h1>Books</h1>
-    <p>Bonnie M. Rubin has authored several books, including “Quick Escapes from Chicago” (Globe-Pequot) and “Fifty on Fifty” (Warner Books), which looked at notable women’s lives at the half-century mark.</p>
     {% for book in books %}
     <li><p><a href="{{ book.amazon_link }}">{{ book.title }}</a></p></li>
     {% endfor %}

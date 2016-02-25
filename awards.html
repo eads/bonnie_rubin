@@ -21,14 +21,19 @@
 {% block content %}
   <div class="container">
     <h1>Awards</h1>
-    <p>Bonnie M. Rubin has authored several books, including “Quick Escapes from Chicago” (Globe-Pequot) and “Fifty on Fifty” (Warner Books), which looked at notable women’s lives at the half-century mark.</p>
+    
     {% for award in awards %}
     <li><p>{{ award.year }} - {{ award.description }}</p></li>
     {% endfor %}
+    <p class="page-end">❧</p>
+
+    <h1>Speaking</h1>
+    
+    <p></p>
+
     <p class="page-end">❧ ❧ ❧</p>
   </div>
 {% endblock %}
-
 {# Customize analytics #}
 {% block analytics %}
 {% include '_analytics.html' %}

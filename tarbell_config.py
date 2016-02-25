@@ -46,22 +46,3 @@ DEFAULT_CONTEXT = {
     'title': 'Bonnie M. Rubin website'
 }
 
-
-
-@blueprint.route('/<article_html_file>')
-def article(article_html_file):
-    context = g.current_site.get_context()
-    extra_context = None
-    for sheet, content in context.items():
-        if isinstance(content, list) and content[0].get('html_file'):
-            for row in content:
-                if row.get('html_file') == article_html_file:
-                    extra_context = row
-                    with open(os.path.join('_articles', article_html_file)) as f:
-                        extra_context['content'] = f.read()
-
-    if extra_context:
-        return g.current_site.preview('_article.html', extra_context)
-    else:
-        return g.current_site.preview(article_html_file)
-
