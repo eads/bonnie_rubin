@@ -311,54 +311,6 @@ img.ajmint-unveil {
     }
 }
 
-@media(max-width:768px) {
-    .intro{
-        position:relative;
-        margin-top: 50px;
-        color:#888;
-        text-shadow:none;
-        padding:0;
-    }
-
-    .navbar-toggle{
-        font-size: 20px;
-    }
-
-
-    .intro .intro-body .intro-text,
-    .intro .intro-body .brand-heading {
-     text-shadow: none; 
-    }
-
-    .intro .intro-body .intro-text{
-        font-size: 1.2em;
-    }
-    
-    .intro .intro-body .brand-heading {
-        font-size: 2.2em;
-    }
-
-    .btn{
-        display:none;
-
-    }
-
-    .panel0-container{
-        margin-top: 50px;
-    }    
-
-}
-
-@media(max-width:1000px) {
-    .intro .intro-body .intro-text {
-    font-size: 1.4em;
-    }
-
-    .intro .intro-body .brand-heading {
-        font-size: 3em;
-    }
-
-}
 
 .btn-circle {
     width: 70px;
@@ -492,6 +444,10 @@ ul.banner-social-buttons {
     margin-bottom: 30px;
 }
 
+.portfolio-section p {
+    margin-bottom: 12px;
+}
+
 p.article-item {
     margin-bottom: 12px;
 }
@@ -520,4 +476,57 @@ body {
 
 .page-end {
     text-align: center;
+}
+
+@media(max-width:768px) {
+    .intro{
+        position:relative;
+        margin-top: 50px;
+        color:#888;
+        text-shadow:none;
+        padding:0;
+    }
+
+    .journalist-name {
+        font-size: 25px;
+    }
+
+    .navbar-toggle{
+        font-size: 20px;
+    }
+
+
+    .intro .intro-body .intro-text,
+    .intro .intro-body .brand-heading {
+     text-shadow: none; 
+    }
+
+    .intro .intro-body .intro-text{
+        font-size: 1.2em;
+    }
+    
+    .intro .intro-body .brand-heading {
+        font-size: 2.2em;
+    }
+
+    .btn{
+        display:none;
+
+    }
+
+    .panel0-container{
+        margin-top: 50px;
+    }    
+
+}
+
+@media(max-width:1000px) {
+    .intro .intro-body .intro-text {
+    font-size: 1.4em;
+    }
+
+    .intro .intro-body .brand-heading {
+        font-size: 3em;
+    }
+
 }
