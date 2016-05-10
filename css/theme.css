@@ -138,6 +138,7 @@ body {
     color: #3B5998;
 }
 
+
 @media(min-width:768px) {
     .navbar-custom {
         padding: 20px 0;
@@ -478,7 +479,7 @@ body {
     text-align: center;
 }
 
-@media(max-width:768px) {
+@media(max-width:1000px) {
     .intro{
         position:relative;
         margin-top: 50px;
