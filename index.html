@@ -25,11 +25,24 @@
         <div class="col-sm-4 col-xs-6" >
           <img src="img/bonnie2.jpg" class="img-responsive">
           {#<p class="credit">Photo: John Dziekan/Chicago Tribune/MCT</p>#}
-        </div> 
+        </div>
         <div class="col-sm-8">
           {{ intro|markdown }}
           <p class="page-end">❧ ❧ ❧</p>
         </div>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-12">
+        <h1> Latest stories </h1>
+        {% for row in essays[0:1] %}
+          <p> <a href="{{row.link}}" target="_blank">{{row.headline}}</a> {{row.publication_date}}</p>
+        {% endfor %}
+        {% for row in health_wellness[0:2] %}
+          <p> <a href="{{row.link}}" target="_blank">{{row.headline}}</a> {{row.publication_date}}</p>
+        {% endfor %}
       </div>
     </div>
   </div>
